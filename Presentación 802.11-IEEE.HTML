@@ -20,42 +20,152 @@
     <textarea id="source">
 
 class: center, middle
-<!-- P1 -->
+
 # Estándares de LAN inalámbrica 802.11 IEEE
 
 
 ---
-<!-- P2 -->
+
 # Tópicos
 
 1. Introducción 
-2. Deep-dive
-3. ...
+2. Wi-Fi vs 802.11
+3. La gran familia 802.11
 
 ---
-<!-- P3 -->
+
 # Introducción
 
 --
-<!-- P4 -->
+
 ## ¿Qué es 802.11?
 
---
-<!-- P5 -->
-- Es una familia de especificaciones desarrolladas por el IEEE para la tecnología **W**ireless **LAN** (WLAN).
+- Es un estándar del IEEE. 
 
---
-<!-- P6 -->
+- Es una familia de especificaciones o enmiendas desarrolladas por el IEEE para la tecnología **W**ireless **LAN** (WLAN).  
+
 - 802.11 especifica una interfaz inalámbrica entre un cliente inalámbrico y una estación base o entre dos clientes inalámbricos.
 
---
-<!-- P7 -->
 - Fue aceptada por el IEEE en 1997.
+
+???
+Enmienda: propuesta de modificación de algún documento oficial.
+---
+
+# Wi-Fi vs 802.11
+- Wi-Fi (Wireless Fidelity) es el nombre de la certificación otorgada por la [Wi-Fi Alliance](https://www.wi-fi.org/),
+grupo que garantiza la compatibilidad entre dispositivos que utilizan el estándar 802.11.
+
+- Por uso indebido de los términos (y por razones de marketing) el nombre del estándar se confunde con el nombre de la
+certificación.
+
+- Una red Wi-Fi es en realidad una red que cumple con el estándar 802.11.
+
+- A los dispositivos certificados por la [Wi-Fi Alliance](https://www.wi-fi.org/) se les permite usar este logotipo:
+.center[![Right-aligned image](./img/logo-wi-fi.png)]
+
+---
+# La gran familia 802.11
+- [**802.11**](#e-1). 
+- [**802.11a**](#e-2).
+- [**802.11b**](#e-3).
+- [**802.11e**](#e-4).
+- [**802.11g**](#e-5).
+- [**802.11n**](#e-6).
+- [**802.11ac**](#e-7).
+- [**802.11ac Wave 2**](#e-8).
+- [**802.11ad**](#e-9).
+- [**802.11ah**](#e-10).
+- [**802.11r**](#e-11).
+- [**802.1X**](#e-12).
+
+---
+name: e-1
+# 802.11
+Proporciona una transmisión de 1 o 2 Mbps en la banda de 2,4 GHz
+utilizando espectro ensanchado por salto de frecuencia (FHSS) o espectro ensanchado por secuencia directa (DSSS).
+
+---
+name: e-2
+#802.11a
+Una extensión a 802.11 que proporciona hasta 54 Mbps
+en la banda de 5 GHz. 802.11a utiliza un esquema de codificación de multiplexación por división de frecuencia ortogonal en lugar
+de FHSS o DSSS.
+
+---
+name: e-3
+#802.11b
+(También conocido como 802.11 High Rate o Wi-Fi): es una extensión a 802.11 que proporciona una
+transmisión de 11 Mbps (con un retroceso a 5.5, 2 y 1-Mbps) en la banda de 2.4 GHz. 802.11b usa solo DSSS .
+802.11b fue una ratificación de 1999 al estándar 802.11 original, lo que permite una funcionalidad inalámbrica comparable a
+Ethernet.
+
+---
+name: e-4
+#802.11e
+Un proyecto de norma inalámbrica que define la **Q**uality of **S**ervice (QoS) soporte para LANs, y es una mejora de las
+especificaciones 802.11a y 802.11b LAN inalámbrica (WLAN). 802.11e agrega características de QoS y soporte multimedia a los
+estándares inalámbricos IEEE 802.11by IEEE 802.11a existentes, al tiempo que mantiene la compatibilidad con estos estándares.
+
+---
+name: e-5
+#802.11g
+Se utiliza para la transmisión a distancias cortas de hasta 54 Mbps en las bandas de 2,4 GHz.
+---
+name: e-6
+#802.11n
+802.11n se basa en estándares anteriores de 802.11 agregando **m**ultiple **i**nput **m**ultiple **o**utput (MIMO).
+Las antenas adicionales del transmisor y el receptor permiten un mayor rendimiento de datos a través de la multiplexación espacial
+y un mayor rango al explotar la diversidad espacial a través de esquemas de codificación como la codificación Alamouti.
+La velocidad real sería de 100 Mbit / s (incluso 250 Mbit / s en el nivel PHY), y hasta 4-5 veces más rápido que 802.11g.
+
+---
+name: e-7
+#802.11ac
+802.11ac se basa en estándares 802.11 anteriores, particularmente el estándar 802.11n, para ofrecer velocidades de datos de
+433Mbps por flujo espacial, o 1.3Gbps en un diseño de tres antenas (tres flujos).
+La especificación 802.11ac opera solo en el rango de frecuencia de 5 GHz y cuenta con soporte para canales más amplios
+(80MHz y 160MHz) y capacidades de formación de haz por defecto para ayudar a lograr sus velocidades inalámbricas más altas.
+---
+name: e-8
+#802.11ac Wave 2
+802.11ac Wave 2 es una actualización de la especificación 802.11ac original que utiliza
+la tecnología MU-MIMO y otros avances para ayudar a aumentar las velocidades inalámbricas máximas teóricas para la
+especificación a 6.93 Gbps.
+
+---
+name: e-9
+#802.11ad
+802.11ad es una especificación inalámbrica en desarrollo que operará en
+la banda de frecuencia de 60 GHz y ofrecerá tasas de transferencia mucho más altas que las especificaciones 802.11
+anteriores, con una tasa de transferencia máxima teórica de hasta 7 Gbps ( Gigabits por segundo ).
+
+---
+name: e-10
+#802.11ah
+También conocido como Wi-Fi HaLow , 802.11ah es la primera especificación de Wi-Fi que funciona en
+bandas de frecuencia por debajo de un gigahercio (900 MHz), y tiene un alcance de casi el doble que otras tecnologías de Wi-Fi.
+También es capaz de penetrar paredes y otras barreras considerablemente mejor que los estándares anteriores de Wi-Fi.
+
+---
+name: e-11
+#802.11r
+802.11r, también llamado Fast **B**ASIC **S**ervicio **S**et (BSS) Transición, apoya VoWi-Fi traspaso entre
+puntos de acceso para permitir VoIP móvil en un Wi-Fi a la red con 802.1X autenticación.
+
+---
+name: e-12
+#802.1X
+No debe confundirse con 802.11x (que es el término utilizado para describir la familia de estándares 802.11) 802.1X es un
+estándar IEEE para el control de acceso a la red basado en puertos que permite a los administradores de red restringir el
+uso del acceso al servicio LAN IEEE 802 apunta a una comunicación segura entre dispositivos autenticados y autorizados. 
 
 ---
 <!-- Fuentes -->
 # Fuentes
 - [1] [Wi-Fi vs 802.11](https://es.ccm.net/contents/789-introduccion-a-wifi-802-11-o-wifi)
+- [2] [IEEE 802.11x](https://www.techopedia.com/definition/508/ieee-80211x)
+- [3] [802.11 IEEE wireless LAN standards](https://www-webopedia-com.cdn.ampproject.org/v/s/www.webopedia.com/amp/TERM/8/802_11.html?usqp=mq331AQCKAE%3D&amp_js_v=0.1#aoh=15703688408290&referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fwww.webopedia.com%2FTERM%2F8%2F802_11.html)
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
