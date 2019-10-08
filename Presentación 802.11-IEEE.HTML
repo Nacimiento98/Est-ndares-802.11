@@ -22,7 +22,10 @@
 class: center, middle
 
 # Estándares de LAN inalámbrica 802.11 IEEE
-
+      Añais, Raul
+      Nacimiento, Martin
+      
+      UNaM - FCEQyN
 
 ---
 
@@ -30,7 +33,10 @@ class: center, middle
 
 1. Introducción 
 2. Wi-Fi vs 802.11
-3. La gran familia 802.11
+3. Terminología
+4. Arquitectura de 802.11 IEEE
+5. Servicios de 802.11 IEEE
+4. La gran familia 802.11
 
 ---
 
@@ -65,6 +71,80 @@ certificación.
 .center[![Right-aligned image](./img/logo-wi-fi.png)]
 
 ---
+
+# Terminología
+- **Punto de acceso (AP)**: Cualquier entidad que tenga la funcionalidad de una estación y proporcione acceso al sistema de
+distribución a través del medio inalámbrico a las estaciones asociadas.
+- **Conjunto básico de servicios (BSS)**: Conjunto de estaciones controladas por una sola función de coordinación.
+- **Función de coordinación**: Función lógica que determina cuándo una estación funcionando dentro
+de un BSS tiene permiso para transmitir y puede recibir PDU.
+- **Sistema de distribución (DS)**: Sistema utilizado para interconectar un conjunto de BSS y LAN integradas para crear un ESS.
+- **Conjunto extendido de servicios (ESS)**: Conjunto de uno o más BSS interconectados y LAN integradas que aparece como un único BSS en la capa LLC de cualquier estación asociada con uno de tales BSS.
+- **Unidad de datos del protocolo MAC (MPDU)**: Unidad de datos intercambiada entre entidades MAC paritarias usando los servicios de la capa física.
+- **Unidad de datos del servicio MAC (MSDU)**: Información entregada como una unidad entre usuarios MAC
+- **Estación**: Cualquier dispositivo que contenga capas físicas y MAC compatibles con IEEE 802.11
+
+---
+.center[![Right-aligned image](./img/Arquitectura.jpg)]
+
+---
+
+#Arquitectura de IEEE 802.11
+
+En la Figura 17.4 se ilustra el modelo desarrollado por el grupo de trabajo IEEE 802.11. El componente elemental de una red LAN
+inalámbrica es un conjunto básico de servicios (BSS, Basic Service Set), consistente en un número de estaciones ejecutando el
+mismo protocolo MAC y compitiendo por el acceso al mismo medio inalámbrico compartido. 
+Un BSS puede funcionar aisladamente o bien estar conectado a un sistema troncal de distribución (DS, Distribution System) a
+través de un punto de acceso (AP, Access Point) que efectúa las funciones de puente. El protocolo MAC puede ser completamente
+distribuido o bien estar controlado por una función central de coordinación ubicada en el punto de acceso. Generalmente,
+el BSS se corresponde con lo que en la bibliografía es referido como «celda». Por otro lado, el DS puede ser un conmutador,
+una red cableada tradicional u otra red inalámbrica.
+
+---
+
+# SERVICIOS DE IEEE 802.11
+.center[![Right-aligned image](./img/Servicios.jpg)]
+
+- **Autenticación**: El servicio de autenticación es utilizado por las estaciones para establecer su identidad con otras con las
+que se desee comunicar.
+
+- **Fin de la autenticación**: este servicio es invocado siempre que se vaya a dar por finalizada una autenticación existente.
+
+- **Privacidad**: se utiliza para asegurar que los contenidos de los mensajes no sean leídos por alguien diferente al receptor
+legítimo. El estándar incluye el uso opcional de mecanismos de cifrado para asegurar la privacidad.
+
+---
+- **Asociación**: establece una asociación inicial entre una estación y un AP. La identidad y dirección de una estación deben
+conocerse antes de que la misma pueda transmitir o recibir tramas en una LAN inalámbrica. Para ello, una estación debe
+establecer una asociación con un AP perteneciente a un BSS particular.
+A partir de entonces, el AP puede comunicar esta información a otros
+AP dentro del ESS con objeto de facilitar el encaminamiento y la entrega de tramas.
+
+- **Reasociación**: permite que una asociación previamente establecida sea transferida desde un AP hasta otro,
+haciendo así posible que una estación móvil pueda desplazarse desde un BSS hasta otro.
+
+- **Disociación**: constituye una notificación, bien de una estación o bien por parte de un AP,
+de que una asociación existente deja de tener validez. Una estación debería proporcionar este aviso antes
+de abandonar un ESS o apagarse. No obstante, las funciones de gestión MAC incluyen mecanismos para protegerse frente a
+estaciones que desaparezcan sin emitir esta notificación.
+
+- La **distribución** es el servicio primario utilizado por las estaciones para intercambiar tramas MAC cuando la trama debe
+atravesar el DS para pasar de una estación en un BSS a otra estación en un BSS diferente.
+---
+- El servicio de **integración** permite la transferencia de datos entre una estación situada en una LAN IEEE 802.11 y otra estación
+en una LAN IEEE 802.x que se encuentre integrada con la primera. El término integrada hace referencia a una LAN cableada
+que esté físicamente conectada con el DS y cuyas estaciones puedan conectarse de forma lógica a una LAN IEEE 802.11 a través
+del servicio de integración. Este servicio es el encargado de llevar a cabo la traducción de direcciones y
+cualquier otra conversión lógica requerida para el intercambio de datos.
+
+- **Entrega de MSDU** (Unidad de datos del servicio MAC): Esta tarea es desempeñada por el servicio de distribución. Para que este servicio pueda llevar a cabo sus funciones, necesita disponer de información acerca de las estaciones que se encuentran dentro del ESS. Esta información es la proporcionada por los servicios relacionados con la asociación. Antes de que el servicio de distribución pueda entregar o aceptar datos de una estación, ésta debe estar asociada. 
+
+???
+Sin transición: una estación de este tipo es estacionaria o se desplaza únicamente dentro del rango de comunicación directa de las estaciones conectadas a un solo BSS.
+Transición BSS: se define como el desplazamiento de una estación desde un BSS hasta otro BSS de destino ubicado en el mismo ESS. En este caso, la entrega de datos a la estación necesita que la función de direccionamiento sea capaz de reconocer la nueva localización de la estación.
+Transición ESS: se define como el desplazamiento de una estación desde un BSS ubicado en un determinado ESS hasta otro BSS perteneciente a un ESS diferente del primero. Esta situación se soporta únicamente debido a que la estación tiene libertad para moverse. Sin embargo, el mantenimiento de conexiones de capas altas sustentadas sobre 802.11 no puede garantizarse. De hecho, es probable que se produzca una interrupción del servicio.
+
+---
 # La gran familia 802.11
 - [**802.11**](#e-1). 
 - [**802.11a**](#e-2).
@@ -82,17 +162,26 @@ certificación.
 ---
 name: e-1
 # 802.11
-Proporciona una transmisión de 1 o 2 Mbps en la banda de 2,4 GHz
-utilizando espectro ensanchado por salto de frecuencia (FHSS) o espectro ensanchado por secuencia directa (DSSS).
+## Incluye
+- 802.11 MAC: La subcapa IEEE 802.11 MAC es responsable de coordinar el acceso a la interfaz aérea física compartida para
+que el punto de acceso (AP) y las estaciones de Wi-Fi dentro del alcance puedan comunicarse de manera efectiva.
+- 2 medios físicos que trabajan en una transmisión de 1 o 2 Mbps en la banda de 2,4 GHz
+utilizando espectro expandido por salto de frecuencia (FHSS) o espectro expandido por secuencia directa (DSSS).
+      
+      - DSSS: puede utilizarse hasta 7 canales cada uno con una velocidad de 1 o 2 Mbps. El número de canales disponibles depende
+      del ancho de banda reservado por las distintas agencias reguladoras.
+      
+      - FHSS: el número de canales varia desde 23 hasta 70 canales. Hace uso de varios canales saltando la señal de un canal a
+      otro de acuerdo con una secuencia pseudoaleatoria. 
 
 ---
 name: e-2
 #802.11a
 Una extensión a 802.11 que proporciona hasta 54 Mbps
-en la banda de 5 GHz. 802.11a utiliza un esquema de codificación de multiplexación por división de frecuencia ortogonal en lugar
+en la banda de 5 GHz. 802.11a utiliza un esquema de codificación de multiplexación por división de frecuencia ortogonal (OFDM) en lugar
 de FHSS o DSSS.
 
----
+--
 name: e-3
 #802.11b
 (También conocido como 802.11 High Rate o Wi-Fi): es una extensión a 802.11 que proporciona una
@@ -107,7 +196,7 @@ Un proyecto de norma inalámbrica que define la **Q**uality of **S**ervice (QoS)
 especificaciones 802.11a y 802.11b LAN inalámbrica (WLAN). 802.11e agrega características de QoS y soporte multimedia a los
 estándares inalámbricos IEEE 802.11by IEEE 802.11a existentes, al tiempo que mantiene la compatibilidad con estos estándares.
 
----
+--
 name: e-5
 #802.11g
 Se utiliza para la transmisión a distancias cortas de hasta 54 Mbps en las bandas de 2,4 GHz.
@@ -119,7 +208,7 @@ Las antenas adicionales del transmisor y el receptor permiten un mayor rendimien
 y un mayor rango al explotar la diversidad espacial a través de esquemas de codificación como la codificación Alamouti.
 La velocidad real sería de 100 Mbit / s (incluso 250 Mbit / s en el nivel PHY), y hasta 4-5 veces más rápido que 802.11g.
 
----
+--
 name: e-7
 #802.11ac
 802.11ac se basa en estándares 802.11 anteriores, particularmente el estándar 802.11n, para ofrecer velocidades de datos de
@@ -133,7 +222,7 @@ name: e-8
 la tecnología MU-MIMO y otros avances para ayudar a aumentar las velocidades inalámbricas máximas teóricas para la
 especificación a 6.93 Gbps.
 
----
+--
 name: e-9
 #802.11ad
 802.11ad es una especificación inalámbrica en desarrollo que operará en
@@ -147,7 +236,7 @@ También conocido como Wi-Fi HaLow , 802.11ah es la primera especificación de W
 bandas de frecuencia por debajo de un gigahercio (900 MHz), y tiene un alcance de casi el doble que otras tecnologías de Wi-Fi.
 También es capaz de penetrar paredes y otras barreras considerablemente mejor que los estándares anteriores de Wi-Fi.
 
----
+--
 name: e-11
 #802.11r
 802.11r, también llamado Fast **B**ASIC **S**ervicio **S**et (BSS) Transición, apoya VoWi-Fi traspaso entre
@@ -159,14 +248,16 @@ name: e-12
 No debe confundirse con 802.11x (que es el término utilizado para describir la familia de estándares 802.11) 802.1X es un
 estándar IEEE para el control de acceso a la red basado en puertos que permite a los administradores de red restringir el
 uso del acceso al servicio LAN IEEE 802 apunta a una comunicación segura entre dispositivos autenticados y autorizados. 
-
+---
+class: center, middle
+# Muchas gracias!
 ---
 <!-- Fuentes -->
 # Fuentes
 - [1] [Wi-Fi vs 802.11](https://es.ccm.net/contents/789-introduccion-a-wifi-802-11-o-wifi)
 - [2] [IEEE 802.11x](https://www.techopedia.com/definition/508/ieee-80211x)
 - [3] [802.11 IEEE wireless LAN standards](https://www-webopedia-com.cdn.ampproject.org/v/s/www.webopedia.com/amp/TERM/8/802_11.html?usqp=mq331AQCKAE%3D&amp_js_v=0.1#aoh=15703688408290&referrer=https%3A%2F%2Fwww.google.com&amp_tf=From%20%251%24s&ampshare=https%3A%2F%2Fwww.webopedia.com%2FTERM%2F8%2F802_11.html)
-
+- [4] [Wi-Fi MAC Layer](https://devopedia.org/wi-fi-mac-layer)
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
